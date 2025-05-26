@@ -1,5 +1,11 @@
+import * as stylex from "@stylexjs/stylex";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+
+const styles = stylex.create({
+  foo: {
+    color: "red"
+  }
+});
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +15,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  //// return <Welcome />;
+
+  return (
+    <div {...stylex.props(styles.foo)}>
+      <h1>Hello</h1>
+    </div>
+  )
 }
