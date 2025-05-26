@@ -2,24 +2,18 @@ import * as stylex from "@stylexjs/stylex";
 import type { Route } from "./+types/home";
 
 const styles = stylex.create({
-  foo: {
-    color: "red"
-  }
+  red: {
+    color: "red",
+  },
 });
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+  return [{ title: "New React Router App" }, { name: "description", content: "Welcome to React Router!" }];
 }
 
 export default function Home() {
   //// return <Welcome />;
 
-  return (
-    <div {...stylex.props(styles.foo)}>
-      <h1>Hello</h1>
-    </div>
-  )
+  // This is supposed to be red!
+  return <h1 {...stylex.props(styles.red)}>Hello</h1>;
 }

@@ -1,5 +1,1 @@
-/**
- * The @stylex directive is used by the @stylexjs/postcss-plugin.
- * It is automatically replaced with generated CSS during builds.
- */
 @stylex;
